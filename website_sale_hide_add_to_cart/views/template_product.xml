@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="hide_add_to_cart_product" inherit_id="web.layout">
+        
+        <xpath expr="//head" position="after">
+            <style>
+                .css_quantity,
+                .js_check_product { 
+                    display: none !important 
+                    }
+            </style>
+        </xpath>
+        
+    </template>
+</odoo>
