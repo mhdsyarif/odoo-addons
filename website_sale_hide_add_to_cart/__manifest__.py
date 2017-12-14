@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'Hide "Add To Cart" button product',
+    'name': 'Hide button "Add To Cart" product',
     'version': '1.0',
     'category': 'eCommerce',
     'summary': 'Custom website product sales',
