@@ -2,10 +2,10 @@
 Add Barcode(Code128) on Report Invoice
 
 # Before
-<img src="account_report_invoice_barcode/static/description/ss_00.png">
+<img src="/static/description/ss_00.png">
 
 # After
-<img src="account_report_invoice_barcode/static/description/ss_01.png">
+<img src="static/description/ss_01.png">
 
 # Usage
 <p>Customer Invoices</p>
@@ -14,7 +14,7 @@ Add Barcode(Code128) on Report Invoice
     <li><strong>Check</strong> Print Barcode (default check),</li>
     <li>If not print <strong>uncheck</strong> Print Barcode</li>
 </ul>
-<img src="account_report_invoice_barcode/static/description/ss_02.png">
+<img src="static/description/ss_02.png">
 
 # Issue
 <p><a href="https://github.com/mhdsyarif/odoo-addons/issues">https://github.com/mhdsyarif/odoo-addons/issues</a></p>
