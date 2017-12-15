@@ -7,7 +7,7 @@
     'summary': 'Custom website product sales',
     'author': 'Muhammad Syarif',
     'email': 'mhdsyarif.ms@gmail.com',
-    'website': 'http://wwww.mhdsyarif.com',
+    'website': 'http://www.mhdsyarif.com',
     'maintainer': 'Riau Programmer',
     'license': 'AGPL-3',
     'depends': ['web'],

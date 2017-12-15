@@ -7,7 +7,7 @@
     'summary': 'Custom report invoice',
     'author': 'Muhammad Syarif',
     'email': 'mhdsyarif.ms@gmail.com',
-    'website': 'http://wwww.mhdsyarif.com',
+    'website': 'http://www.mhdsyarif.com',
     'maintainer': 'Riau Programmer',
     'description': 'Add Barcode(Code128) on Report Invoice',
     'license': 'AGPL-3',
