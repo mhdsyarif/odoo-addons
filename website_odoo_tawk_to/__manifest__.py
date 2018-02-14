@@ -10,6 +10,7 @@
     'website': 'http://www.mhdsyarif.com',
     'maintainer': 'Riau Programmer',
     'license': 'AGPL-3',
+    "description": 'Use tawk.to service to embedded Live Chat in Odoo',
     'depends': ['website'],
     'data': [
         'views/templates.xml',
