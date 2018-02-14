@@ -2,10 +2,11 @@
 Add Barcode(Code128) on Report Invoice
 
 # Before
-<img src="static/description/ss_00.png">
+<img src="static/description/ss_00.png" width="200px" height="200px">
 
 # After
-<img src="static/description/ss_01.png">
+<img src="static/description/ss_01.png" width="200px" height="200px">
+
 
 # Usage
 <p>Customer Invoices</p>
