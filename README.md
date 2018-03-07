@@ -1,4 +1,3 @@
 # odoo-addons
-Odoo Addons Versi 8.0
-
+Odoo Addons
 ## Apps Odoo : <a href="https://goo.gl/Xg56MB">Link</a>
