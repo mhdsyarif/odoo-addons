@@ -2,7 +2,7 @@
 
 {
     'name': 'Hide button "Add To Cart" product',
-    'version': '1.0',
+    'version': '8.0.1.0',
     'category': 'eCommerce',
     'summary': 'Custom website product sales',
     'author': 'Muhammad Syarif',
@@ -10,7 +10,7 @@
     'website': 'http://www.mhdsyarif.com',
     'maintainer': 'Riau Programmer',
     'license': 'AGPL-3',
-    'depends': ['web'],
+    'depends': ['web','website_sale'],
     'data': [
         'views/template_product.xml',
     ],
