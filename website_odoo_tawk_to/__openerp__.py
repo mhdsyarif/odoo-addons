@@ -2,7 +2,7 @@
 
 {
     'name': 'Live Chat Tawk.to',
-    'version': '10.0.1.0',
+    'version': '8.0.1.0',
     'category': 'Website',
     'summary': 'Use tawk.to service to embedded Live Chat in Odoo',
     'author': 'Muhammad Syarif',
