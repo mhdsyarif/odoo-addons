@@ -2,7 +2,7 @@
 
 {
     'name': 'Add Barcode on Report Invoice',
-    'version': '1.0',
+    'version': '8.0.1.0',
     'category': 'Accounting & Finance',
     'summary': 'Custom report invoice',
     'author': 'Muhammad Syarif',
