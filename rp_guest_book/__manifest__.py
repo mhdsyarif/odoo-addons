@@ -18,6 +18,7 @@
         'data/guest_book_sequence.xml',
         'data/guest_book_purpose.xml',
         'security/ir.model.access.csv',
+        'views/assets.xml',
         'views/guest_book.xml',
         'views/menus.xml',
         'views/email_templates.xml'
