@@ -24,7 +24,6 @@
     ],
     'demo': [],
     'depends': ['mail','hr'],
-    'images':[
-    ],
+    'images': ['static/description/syarif.png'],
     'installable': True,
 }
