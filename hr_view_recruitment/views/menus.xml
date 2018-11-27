@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- Inherit Menu Module HR Recruitment -->
+        <menuitem
+            name="Recruitment"
+            id="hr_recruitment.menu_hr_recruitment_root"
+            web_icon="hr_recruitment,static/description/icon.png"
+            groups="hr_recruitment.group_hr_recruitment_user,hr_view_recruitment.group_hr_recruitment_user_view"
+            sequence="80"/>
+        
+        <menuitem 
+            parent="hr_recruitment.menu_hr_recruitment_root" 
+            id="hr_recruitment.menu_hr_job_position" 
+            action="hr_recruitment.action_hr_job" 
+            groups="hr_recruitment.group_hr_recruitment_user"
+            sequence="1"/>
+
+        <menuitem
+            name="Applications"
+            parent="hr_recruitment.menu_hr_recruitment_root"
+            id="hr_recruitment.menu_crm_case_categ0_act_job" 
+            groups="hr_recruitment.group_hr_recruitment_user"
+            sequence="2"/>
+        
+        <menuitem 
+            id="hr_recruitment.menu_hr_recruitment_configuration" 
+            name="Configuration" 
+            parent="hr_recruitment.menu_hr_recruitment_root"
+            groups="hr_recruitment.group_hr_recruitment_user"
+            sequence="100"/>
+            
+        
+        <menuitem 
+            name="Resumes and Letters" 
+            parent="hr_recruitment.menu_hr_recruitment_root" 
+            id="hr_recruitment.menu_crm_case_categ0_act_job02" 
+            action="hr_recruitment.hr_applicant_resumes"
+            groups="hr_recruitment.group_hr_recruitment_user"
+            sequence="3"/>
+
+        <menuitem 
+            name="Reports" 
+            id="hr_recruitment.report_hr_recruitment" 
+            parent="hr_recruitment.menu_hr_recruitment_root" 
+            sequence="99" 
+            groups="hr_recruitment.group_hr_recruitment_user"
+            action="hr_recruitment.hr_applicant_action_analysis"/>
+
+        <!-- End Inherit Menu Module HR Recruitment -->
+
+        <menuitem
+            name="All Applications"
+            parent="hr_recruitment.menu_hr_recruitment_root"
+            id="menu_group_hr_recruitment_user_view" 
+            action="action_menu_group_hr_recruitment_user_view" 
+            sequence="5"/>
+            
+
+    </data>
+</openerp>

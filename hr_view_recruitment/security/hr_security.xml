@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_hr_recruitment_user_view" model="res.groups">
+        <field name="name">User(View)</field>
+        <field name="category_id" ref="base.module_category_hr_recruitment"/>
+        <field name="implied_ids" eval=""/>
+        <field name="comment">View Recruitment.</field>
+    </record>
+
+</odoo>
