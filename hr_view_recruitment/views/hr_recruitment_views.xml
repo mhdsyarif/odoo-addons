@@ -79,7 +79,7 @@
             <field name="name">Jobs - Recruitment Form</field>
             <field name="model">hr.applicant</field>
             <field name="arch" type="xml">
-            <form string="Jobs - Recruitment Form" create="false" edit="false">
+            <form string="Jobs - Recruitment Form" create="false" edit="false" delete="false">
                 <header>
                     <field name="stage_id" widget="statusbar" clickable="True" options="{'fold_field': 'fold'}" attrs="{'invisible': [('active', '=', False),('emp_id', '=', False)]}"/>
                 </header>
