@@ -1,0 +1,55 @@
+<odoo>
+  <data>
+    <!-- explicit form view definition -->
+
+    <record model="ir.ui.view" id="google_chat.view_form">
+      <field name="name">google_chat_view_form</field>
+      <field name="model">google.chat</field>
+      <field name="arch" type="xml">
+        <form string="Google Chat">
+          <sheet>
+            <group>
+              <field name="name" placeholder="Odoo Notification"/>
+              <field name="code" placeholder="ACSAqdgGvGGE"/>
+              <field name="title" placeholder="STAGING/PRODUCTION"/>
+              <field name="key" placeholder="UBQJ-BQvpPXDWF"/>
+              <field name="token" placeholder="UBQJ-BQvpPSJFW"/>
+              <field name="mention" placeholder="users/123456789012345678901"/>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+      </field>
+    </record>
+    
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="google_chat.list">
+      <field name="name">google_chat_list</field>
+      <field name="model">google.chat</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="code"/>
+          <field name="title"/>
+        </tree>
+      </field>
+    </record>
+   
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="google_chat.action_window">
+      <field name="name">Google Chat</field>
+      <field name="res_model">google.chat</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- menu item -->
+    
+    <menuitem name="Google Chat" id="google_chat.menu_root" parent="base.menu_administration" action="google_chat.action_window"  sequence="30"/>
+   
+  </data>
+</odoo>

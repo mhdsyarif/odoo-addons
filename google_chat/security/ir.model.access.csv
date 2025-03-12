@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_google_chat,google_chat.google_chat,model_google_chat,group_manage_google_chat,1,1,1,1
