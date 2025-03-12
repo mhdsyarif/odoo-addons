@@ -24,4 +24,5 @@
         'security/ir.model.access.csv',
         'views/google_chat_views.xml',
     ],
+    'images': ['static/description/icon.png'],
 }
