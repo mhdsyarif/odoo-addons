@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Chat Incoming Webhooks</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h1, h2, h3 { color: #333; }
+        code { background: #f4f4f4; padding: 5px; border-radius: 5px; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Google Chat Incoming Webhooks</h1>
+    
+    <h2>Send Messages Using Incoming Webhooks</h2>
+    
+    <h3>Documentation</h3>
+    <p>Refer to the official documentation: <a href="https://developers.google.com/chat/how-tos/webhooks" target="_blank">Google Chat Webhooks</a>.</p>
+    
+    <h3>Setup & Usage</h3>
+    
+    <h4>1. Configure Webhook URL</h4>
+    <p>Navigate to:</p>
+    <p><strong>Settings → Technical → System Parameters</strong></p>
+    <ul>
+        <li><strong>Name</strong>: <code>google_chat_webhook_url</code></li>
+        <li><strong>Value</strong>: <code>https://chat.googleapis.com/v1/spaces/</code></li>
+    </ul>
+    
+    <h4>2. Assign Role Access</h4>
+    <p><strong>Role Access</strong> → <em>Google Chat</em></p>
+    
+    <h4>3. Configure Google Chat Settings</h4>
+    <p>Navigate to:</p>
+    <p><strong>Settings → Google Chat</strong></p>
+    
+    <h5>Example Configuration</h5>
+    <ul>
+        <li><strong>Name</strong>: Order Notifications</li>
+        <li><strong>Space Code</strong>: <code>AAAAXXXX</code></li>
+        <li><strong>Environment</strong>: <code>STAGING</code> / <code>PRODUCTION</code></li>
+        <li><strong>Space Key</strong>: <code>AIzaSyZtE6vySjXXXXXXX</code></li>
+        <li><strong>Space Token</strong>: <code>BQvpPC3M5qppMyDcsiXXXXXX</code></li>
+        <li><strong>Mention Users</strong>: <code>&lt;users/123456789012345678901&gt;</code></li>
+    </ul>
+    
+    <h3>Example API Call (cURL)</h3>
+    <pre><code>curl -H 'Content-Type: application/json' -X POST \
+"https://chat.googleapis.com/v1/spaces/AAAAXXXX/messages?key=AIzaSyZtE6vySjXXXXXXX&token=UBQJ-BQvpPC3M5qppMyDcsiXXXXXX" \
+--data '{"text": "hi there"}'</code></pre>
+    
+    <hr>
+    
+    <h2>Odoo Integration Example</h2>
+    <pre><code>"""
+Example: Sending a webhook message to Google Chat when a sales order is confirmed.
+"""
+import logging
+from odoo import models, _
+
+_logger = logging.getLogger(__name__)
+
+class SalesOrder(models.Model):
+    _inherit = "sale.order"
+
+    def action_confirm(self):
+        result = super(SalesOrder, self).action_confirm()
+        try:
+            google_chat = self.env["google.chat"].search([( "name", "=", "Order Notifications")], limit=1)
+            if google_chat:
+                message = f"Sale Order {self.name} has been confirmed."
+                google_chat.send_message(message)
+            else:
+                _logger.warning(_("Google Chat configuration not found."))
+        except Exception as e:
+            _logger.warning(_("Failed to send message to Google Chat: %s"), str(e))
+
+        return result</code></pre>
+</body>
+</html>
