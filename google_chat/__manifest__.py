@@ -13,6 +13,7 @@
     # for the full list
     'category': 'Tools',
     'version': '15.0.0.0.1',
+    'license': 'AGPL-3',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'mail'],
