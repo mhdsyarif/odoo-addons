@@ -7,16 +7,10 @@ Refer to the official documentation: [Google Chat Webhooks](https://developers.g
 
 ### Setup & Usage
 
-#### 1. Configure Webhook URL
-Navigate to:
-**Settings → Technical → System Parameters**
-- **Name**: `google_chat_webhook_url`
-- **Value**: `https://chat.googleapis.com/v1/spaces/`
-
-#### 2. Assign Role Access
+#### 1. Assign Role Access
 - **Role Access** → *Google Chat*
 
-#### 3. Configure Google Chat Settings
+#### 2. Configure Google Chat Settings
 Navigate to:
 **Settings → Google Chat**
 
