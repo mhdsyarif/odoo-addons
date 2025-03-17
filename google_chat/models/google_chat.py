@@ -19,15 +19,11 @@ class GoogleChatIntegration(models.Model):
 
     def send_message(self, message, thread_key=None):
         """Send a message to Google Chat using webhooks."""
-        webhook_url = self.env['ir.config_parameter'].sudo().get_param('google_chat_webhook_url')
-        if not webhook_url:
-            _logger.warning("Google Chat webhook URL is not set.")
-            return False
-
+        webhook_base_url = "https://chat.googleapis.com/v1/spaces/"
         responses = []
         for record in self:
             try:
-                url = f"{webhook_url}{record.code}/messages?key={record.key}&token={record.token}"
+                url = f"{webhook_base_url}{record.code}/messages?key={record.key}&token={record.token}"
                 payload = {"text": f"{message}\n{record.mention or ''}"}
 
                 if thread_key:
