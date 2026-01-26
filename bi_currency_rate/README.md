@@ -43,3 +43,7 @@ This Odoo module integrates with **Bank Indonesia’s official exchange rate dat
 - You can also trigger the update manually in Python:
   ```python
   self.env['res.currency.rate'].fetch_bi_rates()
+
+## 🖼️ Screenshot
+Example view of currency rates updated in Odoo:
+![Currency Rate Example in Odoo](static/description/currency_rate_example.png)
