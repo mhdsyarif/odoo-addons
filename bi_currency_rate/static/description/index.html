@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Indonesia Currency Rate Integration</title>
+</head>
+
+<body>
+    <h1>Bank Indonesia Currency Rate Integration</h1>
+    <p>
+        This Odoo module integrates with <strong>Bank Indonesia’s official exchange rate data</strong>,
+        ensuring your accounting and financial transactions always use the latest rates.
+    </p>
+
+    <h2>✨ Features</h2>
+    <ul>
+        <li><strong>Automatic Daily Updates</strong><br>
+            Fetches exchange rates directly from Bank Indonesia every working day via a scheduled cron job.
+        </li>
+        <li><strong>USD JISDOR Support</strong><br>
+            Uses the official Jakarta Interbank Spot Dollar Rate (JISDOR) for USD/IDR.
+        </li>
+        <li><strong>Multi-Currency Support</strong><br>
+            Updates all active currencies in Odoo (excluding IDR) using Bank Indonesia’s Transaction Rates.<br>
+            The module calculates the <strong>mid-rate</strong> from buy &amp; sell values.
+        </li>
+        <li><strong>Dynamic Currency Detection</strong><br>
+            No hardcoding required. Only currencies marked as active in Odoo are updated.
+        </li>
+        <li><strong>Multi-Company Ready</strong><br>
+            Rates are created and stored per company, supporting multi-company environments seamlessly.
+        </li>
+        <li><strong>Audit-Ready</strong><br>
+            Ensures compliance with Indonesian accounting standards by using official BI rates and detailed logging.
+        </li>
+    </ul>
+
+    <h2>🛠 Technical Details</h2>
+    <ul>
+        <li>Extends the <code>res.currency.rate</code> model with a custom method <code>fetch_bi_rates</code>.</li>
+        <li>Scrapes official BI pages for:
+            <ul>
+                <li><strong>JISDOR</strong> (USD/IDR).</li>
+                <li><strong>Transaction Rates</strong> (all other currencies).</li>
+            </ul>
+        </li>
+        <li>Calculates mid-rates from BI’s buy and sell values.</li>
+        <li>Stores rates per company for accounting and reporting.</li>
+        <li>Includes robust error handling and logging for transparency.</li>
+    </ul>
+
+    <h2>🚀 Installation</h2>
+    <ol>
+        <li>Download or clone this repository.</li>
+        <li>Zip the folder <code>bi_currency_rate</code>.</li>
+        <li>Upload and install the module in Odoo Apps.</li>
+        <li>The cron job will run daily at <strong>11:30 WIB (GMT+7)</strong> to fetch BI rates automatically (weekends excluded).</li>
+    </ol>
+
+    <h2>📌 Usage</h2>
+    <ul>
+        <li>Navigate to <strong>Accounting &gt; Configuration &gt; Currencies</strong> and ensure your currencies are
+            active.</li>
+        <li>The module will automatically update rates for all active currencies except IDR.</li>
+        <li>You can also trigger the update manually in Python:</li>
+    </ul>
+    <pre><code>self.env['res.currency.rate'].fetch_bi_rates()</code></pre>
+
+    <h2>📑 Notes</h2>
+    <ul>
+        <li>Ensure currencies like <strong>CNH</strong> and <strong>CNY</strong> are active in Odoo if you want both
+            rates stored.</li>
+        <li>Logs can be checked in <code>odoo.log</code> for detailed information about updates, skipped currencies, or
+            parsing issues.</li>
+        <li>Designed for Odoo 16, but can be adapted for later versions with minimal changes.</li>
+    </ul>
+
+    <h3>🐞 Issue</h3>
+    <p>
+        <a href="https://github.com/mhdsyarif/odoo-addons/issues" target="_blank">
+            Report or track issues here
+        </a>
+    </p>
+</body>
+
+</html>
