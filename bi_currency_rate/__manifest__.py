@@ -4,7 +4,7 @@
     "version": "16.0.1.0.0",
     "author": "Muhammad Syarif",
     "email": "mhdsyarif.ms@gmail.com",
-    "website": "https://mhdsyarif.com",
+    "website": "https://www.mhdsyarif.com",
     "license": "LGPL-3",
     "category": "Accounting",
     "summary": "Automatically fetch daily exchange rates from Bank Indonesia (JISDOR & Transaction Rates).",
