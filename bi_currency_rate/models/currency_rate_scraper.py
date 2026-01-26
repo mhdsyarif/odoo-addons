@@ -3,7 +3,7 @@ from odoo import models, api, fields
 import requests
 from requests.exceptions import RequestException
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, date
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -52,9 +52,15 @@ class CurrencyRateScraper(models.Model):
         except RequestException as e:
             _logger.error("Failed to fetch %s: %s", url, e)
             return None
-
+        
     @api.model
     def fetch_bi_rates(self):
+        today = date.today()
+        # Skip weekends
+        if today.weekday() >= 5:  # 5=Saturday, 6=Sunday
+            _logger.info("Skipping BI rate fetch on weekend: %s", today)
+            return
+
         # Get active currencies except IDR
         active_currencies = self.env['res.currency'].search([('active', '=', True)])
         active_codes = [c.name for c in active_currencies if c.name != "IDR"]
@@ -80,7 +86,11 @@ class CurrencyRateScraper(models.Model):
                                 _logger.error("Failed to parse USD rate: %s", cols[1])
                                 continue
 
-                            usd_currency = self.env.ref("base.USD")
+                            usd_currency = self.env.ref("base.USD", raise_if_not_found=False)
+                            if not usd_currency:
+                                _logger.warning("USD currency not found in Odoo")
+                                break
+
                             for company in companies:
                                 existing = self.search([
                                     ("currency_id", "=", usd_currency.id),
@@ -114,7 +124,7 @@ class CurrencyRateScraper(models.Model):
                 date_obj = self._parse_bi_date(date_span.get_text(strip=True))
                 _logger.info("Parsed BI Transaction date: %s → %s", date_span.get_text(strip=True), date_obj)
             else:
-                date_obj = fields.Date.today()
+                date_obj = date.today()
                 _logger.warning("Date span not found, fallback to today: %s", date_obj)
 
             # Find the correct table by checking headers
@@ -148,9 +158,8 @@ class CurrencyRateScraper(models.Model):
                                           currency_code, cols[2], cols[3])
                             continue
 
-                        try:
-                            currency = self.env.ref("base.%s" % currency_code)
-                        except ValueError:
+                        currency = self.env.ref("base.%s" % currency_code, raise_if_not_found=False)
+                        if not currency:
                             _logger.warning("Currency %s not found in Odoo", currency_code)
                             continue
 

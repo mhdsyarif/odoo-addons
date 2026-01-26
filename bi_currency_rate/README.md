@@ -35,7 +35,7 @@ This Odoo module integrates with **Bank Indonesia’s official exchange rate dat
 1. Download or clone this repository.
 2. Zip the folder `bi_currency_rate`.
 3. Upload and install the module in Odoo Apps.
-4. The cron job will run daily at **11:30 WIB (GMT+7)** to fetch BI rates automatically.
+4. The cron job will run daily at **11:30 WIB (GMT+7)** to fetch BI rates automatically (weekends excluded).
 
 ## 📌 Usage
 - Navigate to **Accounting > Configuration > Currencies** and ensure your currencies are active.
