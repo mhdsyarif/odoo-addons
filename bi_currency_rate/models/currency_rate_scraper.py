@@ -178,7 +178,7 @@ class CurrencyRateScraper(models.Model):
                                 self.create({
                                     "name": date_obj,
                                     "currency_id": currency.id,
-                                    "rate": mid_rate,
+                                    "inverse_company_rate": mid_rate,
                                     "company_id": company.id,
                                 })
                                 _logger.info("Created %s rate: %s on %s for company %s",
