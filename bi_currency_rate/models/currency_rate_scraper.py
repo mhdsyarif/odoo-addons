@@ -99,14 +99,14 @@ class CurrencyRateScraper(models.Model):
                                 ], limit=1)
 
                                 if existing:
-                                    existing.rate = rate_value
+                                    existing.inverse_company_rate = rate_value
                                     _logger.info("Updated USD rate: %s on %s for company %s",
                                                  rate_value, date_obj, company.name)
                                 else:
                                     self.create({
                                         "name": date_obj,
                                         "currency_id": usd_currency.id,
-                                        "rate": rate_value,
+                                        "inverse_company_rate": rate_value,
                                         "company_id": company.id,
                                     })
                                     _logger.info("Created USD rate: %s on %s for company %s",
@@ -171,8 +171,9 @@ class CurrencyRateScraper(models.Model):
                             ], limit=1)
 
                             if existing:
-                                _logger.info("Rate for %s already exists on %s for company %s, skipping",
-                                             currency_code, date_obj, company.name)
+                                existing.write({ "inverse_company_rate": mid_rate}) 
+                                _logger.info("Updated %s inverse company rate: %s on %s for company %s", 
+                                             currency_code, mid_rate, date_obj, company.name)
                             else:
                                 self.create({
                                     "name": date_obj,
