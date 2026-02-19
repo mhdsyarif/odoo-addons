@@ -164,6 +164,31 @@ class CurrencyRateScraper(models.Model):
                             continue
 
                         for company in companies:
+                            if currency.name == company.currency_id.name:
+                                vals = {
+                                    "name": date_obj,
+                                    "currency_id": currency.id,
+                                    "rate": 1.0,
+                                    "inverse_company_rate": 1.0,
+                                    "company_id": company.id,
+                                }
+                                _logger.info("Company %s base currency %s → set rate=1.0, inverse_company_rate=1.0",
+                                            company.name, currency.name)
+                            elif company.currency_id.name != "IDR":
+                                _logger.info("Skipping %s for company %s (base currency %s, BI only provides vs IDR)",
+                                            currency.name, company.name, company.currency_id.name)
+                                continue
+                            else:
+                                vals = {
+                                    "name": date_obj,
+                                    "currency_id": currency.id,
+                                    "rate": 1.0 / mid_rate,
+                                    "inverse_company_rate": mid_rate,
+                                    "company_id": company.id,
+                                }
+                                _logger.info("Company %s currency %s → mid_rate=%s → rate=%s",
+                                            company.name, currency.name, mid_rate, 1.0/mid_rate)
+
                             existing = self.search([
                                 ("currency_id", "=", currency.id),
                                 ("name", "=", date_obj),
@@ -171,15 +196,8 @@ class CurrencyRateScraper(models.Model):
                             ], limit=1)
 
                             if existing:
-                                existing.write({ "inverse_company_rate": mid_rate}) 
-                                _logger.info("Updated %s inverse company rate: %s on %s for company %s", 
-                                             currency_code, mid_rate, date_obj, company.name)
+                                _logger.info("Updating %s for company %s with vals=%s", currency.name, company.name, vals)
+                                existing.write(vals)
                             else:
-                                self.create({
-                                    "name": date_obj,
-                                    "currency_id": currency.id,
-                                    "inverse_company_rate": mid_rate,
-                                    "company_id": company.id,
-                                })
-                                _logger.info("Created %s inverse company rate: %s on %s for company %s",
-                                             currency_code, mid_rate, date_obj, company.name)
+                                _logger.info("Creating %s for company %s with vals=%s", currency.name, company.name, vals)
+                                self.create(vals)
