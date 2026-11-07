@@ -14,6 +14,9 @@
         "python": ["boto3"],
     },
     "uninstall_hook": "uninstall_hook",
+    "images": [
+        "static/description/icon.png",
+    ],
     "license": "LGPL-3",
     "installable": True,
 }
