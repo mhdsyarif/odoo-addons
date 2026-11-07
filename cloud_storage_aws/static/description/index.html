@@ -1,0 +1,249 @@
+<div class="container py-4" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2C3E50;">
+
+    <!-- HERO HEADER -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-12 text-center py-5 px-4 rounded-4 shadow-sm" style="background: linear-gradient(135deg, #1A237E 0%, #0D47A1 50%, #FF9900 100%); color: #ffffff;">
+            <div class="mb-3">
+                <img src="icon.png" alt="Cloud Storage AWS" class="rounded-4 shadow" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid rgba(255, 255, 255, 0.4);">
+            </div>
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <span class="badge bg-warning text-dark fw-bold">NEW</span>
+                <span style="font-size: 0.88rem; font-weight: 500;">Odoo 18.0 &bull; 19.0 &bull; 20.0 Ready</span>
+            </div>
+            <h1 class="display-5 fw-bold mb-3" style="letter-spacing: -0.5px;">Cloud Storage AWS (Amazon S3)</h1>
+            <p class="lead mx-auto mb-4" style="max-width: 750px; font-size: 1.2rem; color: #ECEFF1; line-height: 1.6;">
+                Offload Odoo chatter attachments and document files directly to <strong>Amazon S3</strong>. Save server disk space, reduce hosting costs, and achieve infinite storage scalability.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-2 pt-2">
+                <span class="badge rounded-pill bg-light text-dark px-3 py-2 fw-semibold shadow-sm">Enterprise & Community</span>
+                <span class="badge rounded-pill bg-light text-dark px-3 py-2 fw-semibold shadow-sm">Direct Browser-to-S3 Upload</span>
+                <span class="badge rounded-pill bg-light text-dark px-3 py-2 fw-semibold shadow-sm">SigV4 Presigned URLs</span>
+                <span class="badge rounded-pill bg-light text-dark px-3 py-2 fw-semibold shadow-sm">Auto CORS Setup</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- VALUE PROPOSITION / KEY HIGHLIGHTS -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="h-100 p-4 bg-white rounded-4 shadow-sm border border-light" style="border-top: 4px solid #FF9900 !important;">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-3 p-3" style="background-color: #FFF3E0; color: #E65100;">
+                    <i class="fa fa-bolt fa-2x"></i>
+                </div>
+                <h4 class="fw-bold mb-2" style="color: #1A237E;">Zero Server Bottlenecks</h4>
+                <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+                    Chatter attachments upload directly from the user's browser to S3 via presigned URLs. Large files won't block Odoo HTTP workers or consume server bandwidth.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="h-100 p-4 bg-white rounded-4 shadow-sm border border-light" style="border-top: 4px solid #0D47A1 !important;">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-3 p-3" style="background-color: #E3F2FD; color: #0D47A1;">
+                    <i class="fa fa-shield fa-2x"></i>
+                </div>
+                <h4 class="fw-bold mb-2" style="color: #1A237E;">Bank-Grade Security</h4>
+                <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+                    No public bucket exposure. All operations utilize time-limited AWS SigV4 signed URLs. Bucket keys and credentials are fully isolated and neutralized in test environments.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="h-100 p-4 bg-white rounded-4 shadow-sm border border-light" style="border-top: 4px solid #00897B !important;">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-3 p-3" style="background-color: #E0F2F1; color: #00695C;">
+                    <i class="fa fa-database fa-2x"></i>
+                </div>
+                <h4 class="fw-bold mb-2" style="color: #1A237E;">Deduplication & Safety</h4>
+                <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+                    Shared files across duplicate records are preserved. Deletions happen strictly post-commit to avoid data loss if database transactions roll back.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CORE FEATURES SECTION -->
+    <div class="row mb-5">
+        <div class="col-12 text-center mb-4">
+            <h2 class="fw-bold" style="color: #1A237E;">Key Features & Capabilities</h2>
+            <p class="text-muted mx-auto" style="max-width: 650px;">Built natively for Odoo's <code>cloud_storage</code> ecosystem with enterprise-grade AWS integration.</p>
+        </div>
+        <div class="col-lg-6 mb-3">
+            <div class="d-flex align-items-start p-3 bg-white rounded-3 shadow-sm border h-100">
+                <div class="p-2 rounded-circle me-3 text-white" style="background-color: #FF9900; min-width: 40px; text-align: center;">
+                    <i class="fa fa-cloud-upload"></i>
+                </div>
+                <div>
+                    <h5 class="fw-bold mb-1">Direct Chatter Upload</h5>
+                    <p class="text-muted mb-0" style="font-size: 0.92rem;">Direct client-to-bucket upload using presigned PUT requests. Works out-of-the-box with standard Odoo Chatter.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-3">
+            <div class="d-flex align-items-start p-3 bg-white rounded-3 shadow-sm border h-100">
+                <div class="p-2 rounded-circle me-3 text-white" style="background-color: #0D47A1; min-width: 40px; text-align: center;">
+                    <i class="fa fa-file-pdf-o"></i>
+                </div>
+                <div>
+                    <h5 class="fw-bold mb-1">Fast Inline Previews & Downloads</h5>
+                    <p class="text-muted mb-0" style="font-size: 0.92rem;">PDF viewer and image previews load directly from S3. Original filenames are preserved via RFC-compliant Content-Disposition headers.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-3">
+            <div class="d-flex align-items-start p-3 bg-white rounded-3 shadow-sm border h-100">
+                <div class="p-2 rounded-circle me-3 text-white" style="background-color: #43A047; min-width: 40px; text-align: center;">
+                    <i class="fa fa-server"></i>
+                </div>
+                <div>
+                    <h5 class="fw-bold mb-1">Server-Side Upload Fallback</h5>
+                    <p class="text-muted mb-0" style="font-size: 0.92rem;">Non-chatter binary attachments (e.g. form fields) exceeding the minimum file threshold are automatically pushed to S3 asynchronously.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-3">
+            <div class="d-flex align-items-start p-3 bg-white rounded-3 shadow-sm border h-100">
+                <div class="p-2 rounded-circle me-3 text-white" style="background-color: #6A1B9A; min-width: 40px; text-align: center;">
+                    <i class="fa fa-magic"></i>
+                </div>
+                <div>
+                    <h5 class="fw-bold mb-1">Automated CORS Configuration</h5>
+                    <p class="text-muted mb-0" style="font-size: 0.92rem;">No manual bucket CORS tinkering! Odoo automatically sets up the required S3 CORS policy upon saving credentials.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-3">
+            <div class="d-flex align-items-start p-3 bg-white rounded-3 shadow-sm border h-100">
+                <div class="p-2 rounded-circle me-3 text-white" style="background-color: #D32F2F; min-width: 40px; text-align: center;">
+                    <i class="fa fa-database"></i>
+                </div>
+                <div>
+                    <h5 class="fw-bold mb-1">Staging / Test Neutralization</h5>
+                    <p class="text-muted mb-0" style="font-size: 0.92rem;">Includes <code>neutralize.sql</code> to automatically wipe AWS credentials on staging/testing databases, preventing accidental production blob deletion.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-3">
+            <div class="d-flex align-items-start p-3 bg-white rounded-3 shadow-sm border h-100">
+                <div class="p-2 rounded-circle me-3 text-white" style="background-color: #F57C00; min-width: 40px; text-align: center;">
+                    <i class="fa fa-lock"></i>
+                </div>
+                <div>
+                    <h5 class="fw-bold mb-1">Uninstall Protection Hook</h5>
+                    <p class="text-muted mb-0" style="font-size: 0.92rem;">Prevents module uninstallation if active attachments are stored in S3, safeguarding against accidental disconnection.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS ARCHITECTURE -->
+    <div class="row mb-5 py-4 px-3 rounded-4 shadow-sm" style="background-color: #F8F9FA; border: 1px solid #E9ECEF;">
+        <div class="col-12 text-center mb-4">
+            <span class="badge bg-primary px-3 py-2 text-uppercase mb-2">Architecture</span>
+            <h2 class="fw-bold" style="color: #1A237E;">How Direct Cloud Upload Works</h2>
+            <p class="text-muted">High-performance architecture bypassing the Odoo application server for file payloads.</p>
+        </div>
+        <div class="col-md-4 text-center px-3 mb-3">
+            <h5 class="fw-bold">Request Signed URL</h5>
+            <p class="text-muted small">When attaching a file in the Chatter, Odoo generates a secure, time-limited presigned S3 PUT URL.</p>
+        </div>
+        <div class="col-md-4 text-center px-3 mb-3">
+            <h5 class="fw-bold">Direct Browser Upload</h5>
+            <p class="text-muted small">The user's browser transmits the file bytes directly to Amazon S3. Zero load on Odoo web workers.</p>
+        </div>
+        <div class="col-md-4 text-center px-3 mb-3">
+            <h5 class="fw-bold">Immediate Availability</h5>
+            <p class="text-muted small">Odoo stores the object reference. Files are served via presigned GET URLs with instant inline preview.</p>
+        </div>
+    </div>
+
+    <!-- CONFIGURATION & IAM POLICY -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="card-header py-3 px-4 text-white">
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-cogs me-2"></i>
+                        <h3 class="fw-bold" style="color: #1A237E;">Simple 3-Minute Configuration</h3>
+                    </div>
+                </div>
+                <div class="card-body p-4">
+                    <h6 class="fw-bold text-primary mb-3">Step 1: Amazon IAM Policy</h6>
+                    <p class="text-muted small mb-2">Create an IAM User with programmatic access and attach the following minimal policy (replace <code>YOUR-BUCKET-NAME</code>):</p>
+                    <pre class="p-3 rounded-3" style="background-color: #263238; color: #ECEFF1; font-size: 0.85rem; max-height: 280px; overflow-y: auto;"><code>{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "OdooCloudStorageBucketCORS",
+            "Effect": "Allow",
+            "Action": ["s3:PutBucketCORS"],
+            "Resource": "arn:aws:s3:::YOUR-BUCKET-NAME"
+        },
+        {
+            "Sid": "OdooCloudStorageObjectOperations",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::YOUR-BUCKET-NAME/*"
+        }
+    ]
+}</code></pre>
+
+                    <h6 class="fw-bold text-primary mt-4 mb-3">Step 2: Odoo Settings</h6>
+                    <ol class="text-muted small ps-3 mb-0" style="line-height: 1.8;">
+                        <li>Navigate to <strong>Settings &gt; General Settings &gt; Discuss / Cloud Storage</strong>.</li>
+                        <li>Select <strong>Amazon S3</strong> as the Cloud Storage Provider.</li>
+                        <li>Input your <strong>Bucket Name</strong>, <strong>S3 Region</strong> (e.g. <code>ap-southeast-3</code>), <strong>Access Key ID</strong>, and <strong>Secret Access Key</strong>.</li>
+                        <li>Click <strong>Save</strong>. Odoo performs an automated connectivity &amp; permissions test.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TECHNICAL SPECIFICATIONS -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-6">
+            <div class="p-4 bg-white rounded-4 shadow-sm border h-100">
+                <h5 class="fw-bold mb-3" style="color: #1A237E;"><i class="fa fa-info-circle text-primary me-2"></i>Technical Specifications</h5>
+                <ul class="list-unstyled text-muted small mb-0" style="line-height: 2;">
+                    <li><i class="fa fa-check text-success me-2"></i><strong>Odoo Compatibility:</strong> 18.0, 19.0, 20.0</li>
+                    <li><i class="fa fa-check text-success me-2"></i><strong>Editions:</strong> Community &amp; Enterprise</li>
+                    <li><i class="fa fa-check text-success me-2"></i><strong>Dependencies:</strong> <code>cloud_storage</code>, <code>boto3</code></li>
+                    <li><i class="fa fa-check text-success me-2"></i><strong>Addressing Style:</strong> Virtual-Hosted S3 Style</li>
+                    <li><i class="fa fa-check text-success me-2"></i><strong>Signature Version:</strong> AWS Signature Version 4 (SigV4)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-4 bg-white rounded-4 shadow-sm border h-100">
+                <h5 class="fw-bold mb-3" style="color: #1A237E;"><i class="fa fa-lock text-primary me-2"></i>Security &amp; Integrity</h5>
+                <ul class="list-unstyled text-muted small mb-0" style="line-height: 2;">
+                    <li><i class="fa fa-check text-success me-2"></i><strong>Hashed Blob Keys:</strong> SHA-256 salted with UUID</li>
+                    <li><i class="fa fa-check text-success me-2"></i><strong>Batch Delete:</strong> Grouped up to 1,000 keys per call</li>
+                    <li><i class="fa fa-check text-success me-2"></i><strong>Multi-database Safe:</strong> Client cached per DB registry</li>
+                    <li><i class="fa fa-check text-success me-2"></i><strong>Postcommit Hook:</strong> Zero accidental deletes on rollback</li>
+                    <li><i class="fa fa-check text-success me-2"></i><strong>License:</strong> LGPL-3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUTHOR & SUPPORT BANNER -->
+    <div class="row">
+        <div class="col-12">
+            <div class="p-4 rounded-4 shadow-sm text-center text-white" style="background: linear-gradient(135deg, #1A237E 0%, #0D47A1 50%, #FF9900 100%); color: #ffffff;">
+                <h4 class="fw-bold mb-2">Need Assistance or Custom S3 Storage Integration?</h4>
+                <p class="text-white-50 mb-3 small">Developed with quality and care by <strong>Muhammad Syarif</strong>.</p>
+                <a href="mailto:mhdsyarif.ms@gmail.com" style="color: #f0f1f6;">
+                    Contact Support
+                </a>
+                <a href="https://mhdsyarif.com" target="_blank" class="btn btn-outline-light px-4 py-2 fw-bold rounded-pill" style="color: #f0f1f6;">
+                    Visit Website
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
