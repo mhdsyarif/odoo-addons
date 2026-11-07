@@ -1,6 +1,6 @@
 {
     "name": "Cloud Storage AWS",
-    "summary": """Store chatter attachments in the Amazon S3 cloud""",
+    "summary": """Store attachments in the Amazon S3 cloud""",
     'author': "Muhammad Syarif",
     'email': "mhdsyarif.ms@gmail.com",
     'website': "https://mhdsyarif.com",
